@@ -1,1 +1,1 @@
-
+This project is part of the Software Development II course, conducted by Rumman Ahmed Prodhan at Northern University Bangladesh, for the Fall 2024 semester.
