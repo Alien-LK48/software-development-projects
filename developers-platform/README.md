@@ -18,8 +18,6 @@
 
 ### Run it yourself
 ```sh
-git clone https://github.com/jjooydebnath/developers_platform.git
-cd devSearch
 pip install - r requirements.txt
 ```
 
