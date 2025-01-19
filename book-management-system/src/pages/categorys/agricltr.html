@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="/main.css">
+    <link rel="icon" type="image/png" href="/src/assets/favicon.png">
+    <title>কৃষি ও কৃষক</title>
+</head>
+
+<body class="capitalize font-lato">
+    <!-- heading -->
+    <div class="sticky top-0 z-50">
+
+        <!-- logo , options, search and others -->
+        <div class="flex flex-row gap-[105px] bg-white">
+            <!-- logo & name -->
+            <div class="flex flex-row ml-[95px] mb-[10px]">
+                <div class="flex flex-row">
+                    <img src="/src/assets/firebooks.png" alt="" class="w-[85px] h-[85px]">
+                    <p class="text-3xl mt-[35px]"> <span class="">বই</span> <span class="text-green-600">বৃক্ষ</span>
+                    </p>
+                </div>
+            </div>
+            <!-- navs -->
+            <div class="flex flex-row gap-[15px] mt-[40px]">
+                <a href="/iindex.html">home</a>
+                <a href="/src/pages/about.html">about</a>
+                <a href="/src/pages/shop.html">shop</a>
+                <a href="/src/pages/contac.html">contact</a>
+                <a href="/src/pages/allorders.html">orders</a>
+            </div>
+            <!-- search bar , profile & cart -->
+            <div class="flex flex-row ">
+                <!-- search bar -->
+                <div class="form-control">
+                    <label for="searchInput" class="sr-only">Search</label>
+                    <div class="relative w-[300px] mt-[35px] ">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                        </div>
+                        <input type="search" id="searchInput"
+                            class="block h-[30px] p-4 ps-10 text-sm rounded-full shadow-lg focus:ring-1 focus:ring-green-500 focus:border-green-500"
+                            placeholder="Search books" />
+                    </div>
+                </div>
+                <!-- icons profile & cart -->
+                <a href="/src/pages/shopcart.html">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle mt-[30px]">
+                        <div class="indicator">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                            <span id="cartcount" class="badge badge-sm indicator-item">!</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- poster -->
+    <div class="flex flex-row bg-[#ecebdb] gap-[330px] h-[200px]">
+        <img src="/src/assets/a.png" alt="" class="w-[200px] h-[230px]">
+        <div class="flex flex-col mt-[70px] align-middle items-center">
+            <h1 class="text-4xl uppercase">কৃষি ও কৃষক</h1> <span><a href="/index.html"><span
+                        class="text-purple-950">home</span> </a>/<a href="/index.html">category</a></span>
+        </div>
+        <img src="/src/assets/b.png" alt="" class="w-[270px] h-[200px]">
+    </div>
+
+    <!-- all query input -->
+    <div class="join relative ">
+        <form class="absolute ml-[10px] w-[320px] p-4 rounded-lg shadow border-2 border-black">
+            <!-- price range -->
+            <div class="mb-[10px] p-[10px]">
+                <label for="" class="mb-[5px] font-semibold">Choose Price</label> <br>
+                <input id="priceRange" type="range" min="0" max="600" value="0" class="w-[280px]" step="50" />
+                <div class="flex w-[305px] justify-between px-2 text-xs">
+                    <span class="flex text-lg font-medium" id="priceValue">Price: 0 BDT</span>
+                </div>
+            </div>
+
+            <!-- authors -->
+            <div class="mb-[10px] p-[10px] mt-[10px]">
+                <select id="authorselect" class="select select-bordered w-full max-w-xs rounded-lg shadow">
+                    <option disabled selected class="text-center">Author</option>
+                    <div id="displayauth"></div>
+                </select>
+            </div>
+
+            <!-- stock -->
+            <div class="mb-[10px] p-[10px]">
+                <label for="" class="mr-[20px] font-semibold">In Stock</label>
+                <input type="radio" name="radio-3" class="radio radio-secondary stock-radio" value="in stock" /> <br>
+                <label for="" class="mr-[5px] font-semibold">Stock Out</label>
+                <input type="radio" name="radio-3" class="radio radio-secondary stock-radio" value="stock out" />
+            </div>
+
+            <!-- publishers -->
+            <div class="mb-[10px] p-[10px] mt-[10px]">
+                <select id="publiselect" class="select select-bordered w-full max-w-xs rounded-lg shadow">
+                    <option disabled selected class="text-center">Publishers</option>
+                    <div id="displaypub"></div>
+                </select>
+            </div>
+
+            <!-- language -->
+            <div class="mb-[10px] p-[10px]">
+                <p class="font-semibold">Language</p>
+                <label class="cursor-pointer label">
+                    <span class="label-text">Bangla</span>
+                    <input type="checkbox" class="lang-checkbox checkbox-success" value="Bangla" />
+                </label>
+                <label class="cursor-pointer label">
+                    <span class="label-text">English</span>
+                    <input type="checkbox" class="lang-checkbox checkbox-success" value="English" />
+                </label>
+            </div>
+        </form>
+    </div>
+
+    <br>
+
+    <!-- bookshow -->
+    <div class="ml-[340px] mt-[-5px] w-[1000px] gap-[10px] p-5 rounded-lg shadow-lg border-2 border-black">
+        <div id="listbooks"
+            class="flex flex-wrap h-[460px] overflow-y-auto rounded-lg p-4 shadow-md border-2 border-[#ecebdb]">
+            <span class="loading loading-spinner"></span>
+        </div>
+    </div>
+
+    <script src="/bundle-js/qury.bundle.js" defer></script>
+</body>
+
+</html>

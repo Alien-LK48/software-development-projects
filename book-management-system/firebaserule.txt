@@ -1,0 +1,80 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Users Collection
+    match /users/{userId} {
+      // Allow authenticated users to create their own user document
+      allow create: if request.auth.uid != null;
+
+      // Allow users to read and update their own document
+      allow read, update: if request.auth.uid == userId;
+
+      // Allow admin users to read and update all user documents
+      allow read, update: if request.auth.uid != null &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == "admin";
+
+      // Cart Subcollection
+      match /cart/{cartId} {
+        allow read, create, update, delete: if request.auth.uid == userId;
+      }
+
+      // Orders Subcollection
+      match /orders/{orderId} {
+        allow read, create: if request.auth.uid == userId;
+        allow update, delete: if false; // No updates or deletions allowed
+      }
+
+      // Bookmarks Subcollection
+      match /bookmarks/{bookmarkId} {
+        allow read, create, delete: if request.auth.uid == userId;
+        allow update: if false; // No updates allowed
+      }
+    }
+
+    // Books Collection
+    match /books/{bookId} {
+      // Allow all users (authenticated or not) to read books
+      allow read: if true;
+
+      // Allow admin users to write to the books collection
+      allow write: if request.auth.uid != null &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == "admin";
+    }
+
+    // Admin Collection (Admin-Specific Data)
+    match /admin/{adminDoc} {
+      // Allow admin users to read and write admin-specific documents
+      allow read, write: if request.auth.uid != null &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == "admin";
+    }
+
+    // Global Orders Collection
+    match /orders/{orderId} {
+      // Allow authenticated users to create orders
+      allow create: if request.auth.uid != null;
+
+      // Allow users to read their own orders or admins to read all orders
+      allow read: if request.auth.uid != null &&
+        (resource.data.userId == request.auth.uid || 
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == "admin");
+
+      // No updates or deletions allowed
+      allow update, delete: if false;
+    }
+
+    // Comments Collection
+    match /comments/{commentId} {
+      // Allow authenticated users to create and read comments
+      allow create, read: if request.auth.uid != null;
+
+      // No updates allowed for comments
+      allow update: if false;
+
+      // Allow admin users to delete comments
+      allow delete: if request.auth.uid != null &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == "admin";
+    }
+  }
+}

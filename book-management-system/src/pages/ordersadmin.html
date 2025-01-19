@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/src/assets/favicon.png">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <script>
+        // Simulate content load (replace with your actual loading logic)
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading-screen').style.display = 'none'; // Hide loading screen
+                // document.getElementById('main-content').classList.remove('hidden'); // Show main content
+            }, 2000); // Simulate a 3-second delay
+        });
+
+    </script>
+    <title>all orders</title>
+</head>
+
+<body class="capitalize">
+
+    <div>
+        <!-- logo , options, search and others -->
+        <div class="flex flex-row gap-[70px] bg-white shadow-2xl">
+            <!-- logo & name -->
+            <div class="flex flex-row ml-[95px] mb-[10px]">
+                <div class="flex flex-row">
+                    <img src="/src/assets/firebooks.png" alt="" class="w-[85px] h-[85px]">
+                    <p class="text-3xl mt-[35px]"> <span class="">বই</span> <span class="text-green-600">বৃক্ষ</span>
+                    </p>
+                </div>
+            </div>
+            <!-- navs -->
+            <div class="flex flex-row gap-[15px] mt-[40px]">
+                <a href="" class="if_admin hidden">admin</a>
+                <a href="/index.html">home</a>
+                <a href="/src/pages/add_or_remove.html">add or remove</a>
+                <a href="/src/pages/ordersadmin.html">allorders</a>
+                <a href="/src/pages/comments.html">comments</a>
+            </div>
+
+        </div>
+        <div class="flex flex-wrap gap-[80px] ml-[170px] allorders">
+
+        </div>
+    </div>
+
+    <div id="loading-screen"
+        class="fixed inset-0 bg-gradient-to-r from-green-500 to-white flex items-center justify-center z-50">
+        <div class="flex flex-col items-center justify-center">
+            <!-- Loader -->
+            <div class="relative flex items-center justify-center">
+                <img src="/src/assets/firebooks.png" alt="Loading" class="absolute w-[90px] h-[90px] mt-[5px]">
+                <div class="relative inline-block w-[100px] h-[100px] border-4 border-orange-600 animate-loader">
+                    <div class="absolute top-0 left-0 w-full bg-green-500 animate-loader-inner"></div>
+                </div>
+            </div> <br>
+            <h1><span class="text-xl text-green-800">বই</span><span class="text-orange-600 text-xl">বৃক্ষ</span>
+            </h1>
+        </div>
+    </div>
+    <script src="/bundle-js/adminsorder.bundle.js"></script>
+</body>
+
+</html>

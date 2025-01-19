@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/src/assets/favicon.png">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <style>
+        /* Custom styles to apply slide transition */
+        #slide-1:checked~.flex {
+            transform: translateX(0);
+        }
+
+        #slide-2:checked~.flex {
+            transform: translateX(-100%);
+        }
+
+        #slide-3:checked~.flex {
+            transform: translateX(-200%);
+        }
+    </style>
+    <script>
+        // Simulate content load (replace with your actual loading logic)
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading-screen').style.display = 'none'; // Hide loading screen
+                // document.getElementById('main-content').classList.remove('hidden'); // Show main content
+            }, 500); // Simulate a 3-second delay
+        });
+
+    </script>
+    <title>Document</title>
+</head>
+
+<body class="capitalize">
+    <div>
+        <!-- heading -->
+        <div class="sticky top-0 z-50">
+
+            <!-- logo , options, search and others -->
+            <div class="flex flex-row gap-[70px] bg-white">
+                <!-- logo & name -->
+                <div class="flex flex-row ml-[95px] mb-[10px]">
+                    <div class="flex flex-row">
+                        <img src="/src/assets/firebooks.png" alt="" class="w-[85px] h-[85px]">
+                        <p class="text-3xl mt-[35px]"> <span class="">বই</span> <span
+                                class="text-green-600">বৃক্ষ</span>
+                        </p>
+                    </div>
+                </div>
+                <!-- navs -->
+                <div class="flex flex-row gap-[15px] mt-[40px]">
+                    <a href="" class="if_admin hidden">admin</a>
+                    <a href="/index.html">home</a>
+                    <a href="/src/pages/about.html">about</a>
+                    <a href="/src/pages/shop.html">shop</a>
+                    <a href="/src/pages/contac.html">contact</a>
+                    <a href="/src/pages/allorders.html">orders</a>
+                    <details class="dropdown mt-[-10px]">
+                        <summary class="btn">category</summary>
+                        <ul
+                            class="menu dropdown-content bg-base-100 rounded-box z-[1] w-[550px] p-2 shadow max-h-64 overflow-y-auto">
+                            <li><a href="/src/pages/categorys/liberation-war.html">মুক্তিযুদ্ধ</a></li>
+                            <li><a href="/src/pages/categorys/jurnal.html">গণমাধ্যম ও সাংবাদিকতা</a></li>
+                            <li><a href="/src/pages/categorys/engn.html">ইঞ্জিনিয়ারিং</a></li>
+                            <li><a href="/src/pages/categorys/politics.html">রাজনীতি</a></li>
+                            <li><a href="/src/pages/categorys/agricltr.html">কৃষি ও কৃষক</a></li>
+                            <li><a href="/src/pages/categorys/entn.html">সংগীত, চলচ্চিত্র ও বিনোদন</a></li>
+                            <li><a href="/src/pages/categorys/novel.html">উপন্যাস</a></li>
+                            <li><a href="/src/pages/categorys/poem.html">কবিতা</a></li>
+                            <li><a href="/src/pages/categorys/fairy.html">রূপকথা</a></li>
+                            <li><a href="/src/pages/categorys/law.html">আইন ও বিচার</a></li>
+                            <li><a href="/src/pages/categorys/language-and-law.html">ভাষা ও অভিধান</a></li>
+                            <li><a href="/src/pages/categorys/essay.html">প্রবন্ধ</a></li>
+                            <li><a href="/src/pages/categorys/islam.html">ইসলামিক বই</a></li>
+                            <li><a href="/src/pages/categorys/cook.html">রান্না বান্না</a></li>
+                            <li><a href="/src/pages/categorys/admit.html">ভর্তি, নিয়োগ ও প্রস্তুতি পরীক্ষা</a></li>
+                            <li><a href="/src/pages/categorys/student.html">ছাত্রজীবনের উন্নয়ন</a></li>
+                            <li><a href="/src/pages/categorys/language-and-law.html">ভাষা শিক্ষা</a></li>
+                        </ul>
+                    </details>
+                </div>
+
+            </div>
+        </div>
+        <!-- poster -->
+        <div class="flex flex-row bg-[#ecebdb] gap-[310px] h-[200px]">
+            <img src="/src/assets/a.png" alt="" class="w-[200px] h-[230px]">
+            <div class="flex flex-col mt-[70px] align-middle items-center">
+                <h1 class="text-4xl uppercase">your orders</h1> <span><a href="/index.html"><span
+                            class="text-purple-950">home</span> </a>/<a
+                        href="/src/pages/allorders.html">orders</a></span>
+            </div>
+            <img src="/src/assets/b.png" alt="" class="w-[270px] h-[200px]">
+        </div><br><br>
+        <div class="allorders flex flex-wrap gap-[155px] ml-[150px]  ">
+            <!-- form db -->
+            <span class="loading loading-ring loading-xs bg-[red]"></span>
+            <span class="loading loading-ring loading-sm bg-[red]"></span>
+            <span class="loading loading-ring loading-md bg-[red]"></span>
+            <span class="loading loading-ring loading-lg bg-[red]"></span>
+        </div>
+    </div>
+    <!-- loading screen -->
+    <div id="loading-screen"
+        class="fixed inset-0 bg-gradient-to-r from-green-500 to-white flex items-center justify-center z-50">
+        <div class="flex flex-col items-center justify-center">
+            <!-- Loader -->
+            <div class="relative flex items-center justify-center">
+                <img src="/src/assets/firebooks.png" alt="Loading" class="absolute w-[90px] h-[90px] mt-[5px]">
+                <div class="relative inline-block w-[100px] h-[100px] border-4 border-orange-600 animate-loader">
+                    <div class="absolute top-0 left-0 w-full bg-green-500 animate-loader-inner"></div>
+                </div>
+            </div> <br>
+            <h1><span class="text-xl text-green-800">বই</span><span class="text-orange-600 text-xl">বৃক্ষ</span>
+            </h1>
+        </div>
+    </div>
+    <script src="/bundle-js/orders.bundle.js"></script>
+</body>
+
+</html>

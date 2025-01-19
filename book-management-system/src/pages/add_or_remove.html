@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
+    <title>Document</title>
+</head>
+
+<body class="capitalize bg-gradient-to-r from-blue-100 via-sky-50 to-blue-50 min-h-screen">
+
+    <h1 class="text-4xl text-center pt-[20px]">Customize your data</h1>
+    <br>
+    <div class="flex w-[1200px] ml-[60px]">
+        <div
+            class="border-2 border-[black] bg-gradient-to-br from-blue-50 to-blue-100 card rounded-box grid h-[32rem] flex-grow place-items-center overflow-y-auto">
+            <h1 class="text-4xl font-bold mt-[20px]">Add a book</h1>
+            <form action="" id="create_a_book">
+                <input autocomplete="off" type="text" name="book"
+                    class="w-[350px] mt-[10px] mb-[10px] h-[45px] input input-bordered" placeholder="Book name">
+                <br>
+                <input autocomplete="off" type="text" name="bookbng"
+                    class="w-[350px] mb-[10px] h-[45px] input input-bordered" placeholder="বইয়ের নাম">
+                <br>
+
+                <input autocomplete="off" type="text" name="author"
+                    class="w-[350px] mb-[10px] h-[45px] input input-bordered" placeholder="writer name">
+
+                <br>
+                <input autocomplete="off" type="text" name="genre"
+                    class="w-[170px] mb-[10px] h-[45px] input input-bordered" placeholder="genre">
+
+
+                <input autocomplete="off" type="text" name="pages"
+                    class="w-[175px] mb-[10px] h-[45px] input input-bordered" placeholder="pages">
+                <br>
+
+                <input autocomplete="off" type="text" name="bgpic"
+                    class="w-[350px] mb-[10px] h-[45px] input input-bordered" placeholder="Sample image link">
+                <br>
+
+                <textarea name="about" class=" textarea-bordered textarea w-[350px] mb-[5px] h-[100px] resize-none"
+                    placeholder="About this book"></textarea>
+                <br>
+
+                <input autocomplete="off" type="text" name="publications"
+                    class="w-[350px] mb-[10px] h-[45px] input input-bordered" placeholder="Publications">
+                <br>
+
+                <input autocomplete="off" type="text" name="language"
+                    class="w-[170px] mb-[10px] h-[45px] input input-bordered" placeholder="Language">
+
+
+                <input autocomplete="off" type="text" name="availability"
+                    class="w-[170px] mb-[10px] h-[45px] input input-bordered" placeholder="Availability">
+                <br>
+                <input autocomplete="off" type="text" name="price"
+                    class="w-[170px] mb-[10px] h-[45px] input input-bordered" placeholder="Price of book">
+                <br>
+                <button
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 mb-4">Add
+                    this book</button>
+            </form>
+
+        </div>
+
+        <div class="divider divider-horizontal divider-info  text-[black]">OR</div>
+
+        <div
+            class="border-2 border-[black] card bg-gradient-to-br from-blue-50 to-blue-100 rounded-box h-[32rem] flex-grow place-items-center">
+            <div class="mt-[195px]">
+                <h1 class="text-4xl font-bold mb-[5px]">remove a book</h1>
+                <form action="" class="removedoc">
+                    <label class="form-control w-full max-w-xs">
+                        <div class="label">
+                            <span class="label-text">enter document id to remove</span>
+                        </div>
+                        <input autocomplete="off" name="id" type="text" placeholder="enter id of a guide"
+                            class="input input-bordered w-[300px] mb-[10px] h-[45px]" />
+                    </label>
+                    <button
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 mb-4">Delete
+                        this book</button>
+                    <p class="dltmsg"></p>
+                </form>
+            </div>
+        </div>
+        <div class="divider divider-horizontal divider-info text-[black]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-xl" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+        </div>
+        <div>
+            <div
+                class="border-2 border-[black] form-control card bg-gradient-to-br from-blue-50 to-blue-100 rounded-box h-[32rem] flex-grow place-items-center px-[10px] py-[10px]">
+                <h1 class="text-4xl font-bold mb-[5px] mt-[15px]">search a book</h1>
+                <input autocomplete="off" type="text" placeholder="Search"
+                    class="input input-bordered w-[300px] h-[50px] mt-[10px]" id="searchInput" />
+                <p id="addordel" class="flex gap-[20px] mt-[20px] flex-col overflow-y-auto h-[400px] w-full"></p>
+            </div>
+
+        </div>
+    </div>
+    <script src="/bundle-js/addrmv.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <script>
+        // Simulate content load (replace with your actual loading logic)
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading-screen').style.display = 'none'; // Hide loading screen
+                document.getElementById('main-content').classList.remove('hidden'); // Show main content
+            }, 2500); // Simulate a 3-second delay
+        });
+
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="main-content">
+        <!-- header -->
+        <div class="sticky top-0 z-50">
+            <!-- notific -->
+            <div class="">
+                <div class="hidden" id="notification">
+                    <div role="alert" class="alert shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            class="stroke-info h-6 w-6 shrink-0">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <div>
+                            <h3 class="font-bold">New message!</h3>
+                            <div class="text-xs">book added successfully ✅✅✅</div>
+                        </div>
+                        <button class="btn btn-sm text-2xl" id="closeNotification">X</button>
+                    </div>
+                </div>
+            </div>
+            <!-- logo , options, search and others -->
+            <div class="flex flex-row gap-[105px] bg-white">
+                <!-- logo & name -->
+                <div class="flex flex-row ml-[95px] mb-[10px]">
+                    <div class="flex flex-row">
+                        <img src="/src/assets/firebooks.png" alt="" class="w-[85px] h-[85px]">
+                        <p class="text-3xl mt-[35px]"> <span class="">বই</span> <span
+                                class="text-green-600">বৃক্ষ</span>
+                        </p>
+                    </div>
+                </div>
+                <!-- navs -->
+                <div class="flex flex-row gap-[15px] mt-[40px]">
+                    <a href="/iindex.html">home</a>
+                    <a href="/src/pages/about.html">about</a>
+                    <a href="/src/pages/shop.html">shop</a>
+                    <a href="http://">contact</a>
+                    <a href="http://">orders</a>
+                    <details class="dropdown mt-[-10px]">
+                        <summary class="btn">category</summary>
+                        <ul
+                            class="menu dropdown-content bg-base-100 rounded-box z-[1] w-[550px] p-2 shadow max-h-64 overflow-y-auto">
+                            <li><a href="#">মুক্তিযুদ্ধ</a></li>
+                            <li><a href="#">গণমাধ্যম ও সাংবাদিকতা</a></li>
+                            <li><a href="#">ইঞ্জিনিয়ারিং</a></li>
+                            <li><a href="#">রাজনীতি</a></li>
+                            <li><a href="#">কৃষি ও কৃষক</a></li>
+                            <li><a href="#">সংগীত, চলচ্চিত্র ও বিনোদন</a></li>
+                            <li><a href="#">উপন্যাস</a></li>
+                            <li><a href="#">কবিতা</a></li>
+                            <li><a href="#">রূপকথা</a></li>
+                            <li><a href="#">আইন ও বিচার</a></li>
+                            <li><a href="#">ভাষা ও অভিধান</a></li>
+                            <li><a href="#">প্রবন্ধ</a></li>
+                            <li><a href="#">ইসলামিক বই</a></li>
+                            <li><a href="#">রান্না বান্না</a></li>
+                            <li><a href="#">ভর্তি, নিয়োগ ও প্রস্তুতি পরীক্ষা</a></li>
+                            <li><a href="#">ছাত্রজীবনের উন্নয়ন</a></li>
+                            <li><a href="#">ভাষা শিক্ষা</a></li>
+                        </ul>
+                    </details>
+                </div>
+                <!-- search bar , profile & cart -->
+                <div class="flex flex-row ">
+                    <!-- search bar -->
+                    <div class="form-control">
+                        <label for="searchInput" class="sr-only">Search</label>
+                        <div class="relative w-[300px] mt-[35px] ">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                </svg>
+                            </div>
+                            <input type="search" id="searchInput"
+                                class="block h-[30px] p-4 ps-10 text-sm rounded-full shadow-lg focus:ring-1 focus:ring-green-500 focus:border-green-500"
+                                placeholder="Search books" />
+                        </div>
+                    </div>
+                    <!-- icons cart -->
+                    <div class="flex w-[220px] gap-[20px] mt-[30px] ml-[-55px]">
+
+                        <a href="/src/pages/shopcart.html" class="btn"><i
+                                class="fa-solid fa-cart-shopping text-2xl"></i> ( <span id="cartcount">!</span> ) </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- poster -->
+        <div class="flex flex-row bg-[#ecebdb] gap-[280px] h-[200px]">
+            <img src="/src/assets/a.png" alt="" class="w-[200px] h-[230px]">
+            <div class="flex flex-col mt-[70px] align-middle items-center">
+                <h1 class="text-4xl uppercase">your bookmarks</h1> <span><a href="/index.html"><span
+                            class="text-purple-950">home</span> </a>/<a
+                        href="/src/pages/bookmark.html">bookmark</a></span>
+            </div>
+            <img src="/src/assets/b.png" alt="" class="w-[270px] h-[200px]">
+        </div><br><br>
+
+        <!-- all books -->
+        <div>
+
+            <div>
+                <h1 class="uppercase text-4xl text-center">all bookmarks</h1> <br> <br>
+
+                <div class="displaybooks flex flex-wrap px-[100px] gap-[45px] ml-[10px]">
+                    <!-- dinamic -->
+                    <span class="loading loading-spinner text-error"></span>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- report  -->
+        <div>
+            <div>
+                <h1 class="text-4xl text-center uppercase">report a problem</h1> <br>
+                <div style="background-image: url('/src/assets/report\ \(2\).jpeg')"
+                    class="h-[525px] bg-cover bg-center pt-[20px] align-middle items-center text-center">
+                    <h1 class="text-2xl text-center mb-[10px] text-black capitalize">write us</h1>
+                    <div class="ml-[455px]">
+                        <form action="">
+                            <!-- name -->
+                            <label class="input input-bordered flex items-center gap-2 w-[450px]">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                    class="h-4 w-4 opacity-70">
+                                    <path
+                                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+                                </svg>
+                                <input type="text" class="grow" placeholder="Username" />
+                            </label> <br>
+                            <!-- email -->
+                            <label class="input input-bordered flex items-center gap-2 w-[450px]">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                    class="h-4 w-4 opacity-70">
+                                    <path
+                                        d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
+                                    <path
+                                        d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
+                                </svg>
+                                <input type="text" class="grow w-[250px]" placeholder="Email" />
+                            </label><br>
+                            <!-- report -->
+                            <textarea class="w-[250px] h-[250px] ml-[-640px] resize-none" name="" id=""
+                                placeholder="Report"></textarea><br>
+                            <!-- submit -->
+                            <button class="btn bg-[red] text-white">Submit</button>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div>
+            <footer class="footer bg-base-200 text-base-content p-10">
+                <nav>
+                    <h6 class="footer-title">Services</h6>
+                    <a class="link link-hover">Branding</a>
+                    <a class="link link-hover">Design</a>
+                    <a class="link link-hover">Marketing</a>
+                    <a class="link link-hover">Advertisement</a>
+                </nav>
+                <nav>
+                    <h6 class="footer-title">Company</h6>
+                    <a class="link link-hover">About us</a>
+                    <a class="link link-hover">Contact</a>
+                    <a class="link link-hover">Jobs</a>
+                    <a class="link link-hover">Press kit</a>
+                </nav>
+                <nav>
+                    <h6 class="footer-title">Legal</h6>
+                    <a class="link link-hover">Terms of use</a>
+                    <a class="link link-hover">Privacy policy</a>
+                    <a class="link link-hover">Cookie policy</a>
+                </nav>
+            </footer>
+            <footer class="footer bg-base-200 text-base-content border-base-300 border-t px-10 py-4">
+                <aside class="grid-flow-col items-center">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                        fill-rule="evenodd" clip-rule="evenodd" class="fill-current">
+                        <path
+                            d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z">
+                        </path>
+                    </svg>
+                    <p>
+                        বইবৃক্ষ
+                        <br />
+                        জ্ঞানের বৃক্ষ, যেখানে প্রতিটি বই একটি নতুন শুরু!
+                    </p>
+                </aside>
+                <nav class="md:place-self-center md:justify-self-end">
+                    <div class="grid grid-flow-col gap-4">
+                        <a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                class="fill-current">
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                class="fill-current">
+                                <path
+                                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                class="fill-current">
+                                <path
+                                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </nav>
+            </footer>
+        </div>
+    </div>
+    <div id="loading-screen"
+        class="fixed inset-0 bg-gradient-to-r from-green-500 to-white flex items-center justify-center z-50">
+        <div class="flex flex-col items-center justify-center">
+            <!-- Loader -->
+            <div class="relative flex items-center justify-center">
+                <img src="/src/assets/firebooks.png" alt="Loading" class="absolute w-[90px] h-[90px] mt-[5px]">
+                <div class="relative inline-block w-[100px] h-[100px] border-4 border-orange-600 animate-loader">
+                    <div class="absolute top-0 left-0 w-full bg-green-500 animate-loader-inner"></div>
+                </div>
+            </div> <br>
+            <h1><span class="text-xl text-green-800">বই</span><span class="text-orange-600 text-xl">বৃক্ষ</span>
+            </h1>
+        </div>
+    </div>
+    <script src="/bundle-js/bookmark.bundle.js"></script>
+</body>
+
+</html>
